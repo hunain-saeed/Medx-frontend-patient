@@ -4,29 +4,15 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Dropdown from "react-bootstrap/Dropdown";
 
 import { signIn, signOut } from "../../actions";
 import { setAlert } from "../../actions/alert";
 import { login } from "../../actions/auth";
 
-// TODO remove redux hide logout login and apply correct logic
+
 class Login extends Component {
   state = { email: "", password: "" };
-  CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-    <a
-      href="#"
-      className="ml-2"
-      style={{ textDecoration: "none" }}
-      ref={ref}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    >
-      {children}
-    </a>
-  ));
+
   onChange = (e) => {
     this.setState({ ...this.state, [e.target.name]: e.target.value });
   };
@@ -34,6 +20,7 @@ class Login extends Component {
     event.preventDefault();
     this.props.login(this.state.email, this.state.password);
 
+    // TODO when complete remove this
     // if (this.state.password !== "1234") {
     //   console.log("not match");
     //   this.props.setAlert("Password do not match", "danger");
@@ -50,6 +37,7 @@ class Login extends Component {
     //   return null;
     // }
   };
+
   render() {
     return (
       <div className="login">
@@ -88,28 +76,15 @@ class Login extends Component {
               Login
             </Button>
           </Form>
-
-          <Dropdown className="mt-3">
-            Don't have an account?
-            <Dropdown.Toggle
-              as={this.CustomToggle}
-              id="dropdown-custom-components"
+          <p className="mt-3">
+            Don't have an account?{" "}
+            <Link
+              to={"/register/" + this.props.name.toLowerCase()}
+              style={{ textDecoration: "none" }}
             >
               Sign Up
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>
-                <Link to="/register/patient" style={{ textDecoration: "none" }}>
-                  As Patient
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to="/register/doctor" style={{ textDecoration: "none" }}>
-                  As Doctor
-                </Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+            </Link>
+          </p>
         </div>
       </div>
     );

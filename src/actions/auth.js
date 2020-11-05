@@ -1,6 +1,8 @@
 import axios from "axios";
+
 import { setAlert } from "./alert";
 import { LOGIN_SUCCESS, LOGIN_FAIL } from "./types";
+import { LoginPatient } from "../apis/api";
 
 // //Register User
 // export const register = (user) => {
@@ -31,11 +33,7 @@ export const login = (email, password) => {
 
     const body = JSON.stringify({ email, password });
     try {
-      const res = await axios.post(
-        "http://localhost:4000/api/login/patient",
-        body,
-        config
-      );
+      const res = await axios.post(LoginPatient, body, config);
 
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
       dispatch(setAlert("user is loged in", "success"));
