@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-// import { signIn, signOut } from "../actions";
+import { signOut } from "../actions";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -9,6 +9,9 @@ import Nav from "react-bootstrap/Nav";
 import NavItem from "./NavItem";
 
 class NavBar extends React.Component {
+  onClickLogout = () => {
+    this.props.signOut();
+  }
   renderAuthButton = () => {
     if (!this.props.isSignedIn) {
       return (
@@ -22,7 +25,7 @@ class NavBar extends React.Component {
     } else if (this.props.isSignedIn) {
       return (
         <Nav className="mr-auto">
-          <Link to="/" className="nav-link">
+          <Link onClick={this.onClickLogout} to="/" className="nav-link">
             Logout
           </Link>
         </Nav>
@@ -50,4 +53,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, { signOut })(NavBar);

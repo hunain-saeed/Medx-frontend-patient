@@ -7,8 +7,12 @@ import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 
 import { signIn, signOut } from "../../actions";
+import { setAlert } from "../../actions/alert";
+import { login } from "../../actions/auth";
+
 // TODO remove redux hide logout login and apply correct logic
 class Login extends Component {
+  state = { email: "", password: "" };
   CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
       href="#"
@@ -23,15 +27,28 @@ class Login extends Component {
       {children}
     </a>
   ));
+  onChange = (e) => {
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
+  };
   onFormSubmit = (event) => {
     event.preventDefault();
-    if (!this.props.isSignedIn) {
-      this.props.signIn();
-    } else if (this.props.isSignedIn) {
-      this.props.signOut();
-    } else {
-      return null;
-    }
+    this.props.login(this.state.email, this.state.password);
+
+    // if (this.state.password !== "1234") {
+    //   console.log("not match");
+    //   this.props.setAlert("Password do not match", "danger");
+    //   this.props.signOut();
+    // } else {
+    //   this.props.setAlert("Password match", "success");
+    //   this.props.signIn();
+    // }
+    // if (!this.props.isSignedIn) {
+    //   this.props.signIn();
+    // } else if (this.props.isSignedIn) {
+    //   this.props.signOut();
+    // } else {
+    //   return null;
+    // }
   };
   render() {
     return (
@@ -44,22 +61,30 @@ class Login extends Component {
               <span className="font-weight-bold">{this.props.name}</span>
             </p>
           </div>
-          {/* TODO make onSubmit function here and remove onClick <Form onSubmit={this.onFormSubmit}>*/}
           <Form onSubmit={this.onFormSubmit}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" required />
+              <Form.Control
+                type="email"
+                name="email"
+                onChange={(e) => this.onChange(e)}
+                value={this.state.email}
+                placeholder="Enter email"
+                required
+              />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required/>
+              <Form.Control
+                name="password"
+                onChange={(e) => this.onChange(e)}
+                value={this.state.password}
+                type="password"
+                placeholder="Password"
+                required
+              />
             </Form.Group>
-            <Button
-              className="mt-4"
-              variant="success"
-              block
-              type="submit"
-            >
+            <Button className="mt-4" variant="success" block type="submit">
               Login
             </Button>
           </Form>
@@ -95,4 +120,6 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signIn, signOut })(Login);
+export default connect(mapStateToProps, { signIn, signOut, setAlert, login })(
+  Login
+);
