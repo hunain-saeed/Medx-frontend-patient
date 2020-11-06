@@ -1,34 +1,36 @@
+import "./NavBar.css"
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../actions";
+// Material Ui
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-
+// Custorm component import
 import NavItem from "./NavItem";
 
 class NavBar extends React.Component {
   onClickLogout = () => {
     this.props.signOut();
-  }
+  };
   renderAuthButton = () => {
     if (!this.props.isSignedIn) {
       return (
-        <span>
-          <Nav className="mr-auto">
-            <NavItem name="Login" route="/login" />
-            <NavItem name="Register" route="/register" />
-          </Nav>
-        </span>
+        <React.Fragment>
+          <NavItem name="Login" route="/login" />
+          <NavItem name="Register" route="/register" />
+        </React.Fragment>
       );
     } else if (this.props.isSignedIn) {
       return (
-        <Nav className="mr-auto">
-          <Link onClick={this.onClickLogout} to="/" className="nav-link">
+        <Button id="button">
+          <Link onClick={this.onClickLogout} to="/" className="logoutButton">
             Logout
           </Link>
-        </Nav>
+        </Button>
       );
     } else {
       return null;
@@ -38,12 +40,19 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar style={{ background: "#121212" }} variant="dark">
-          <Link to="/" className="navbar-brand">
-            Medx
-          </Link>
-          {this.renderAuthButton()}
-        </Navbar>
+        <AppBar
+          position="static"
+          style={{ background: "#343a40", flexGrow: 1 }}
+        >
+          <Toolbar>
+            <Typography variant="h4" style={{ flexGrow: 1 }}>
+              <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+                Medx
+              </Link>
+            </Typography>
+            {this.renderAuthButton()}
+          </Toolbar>
+        </AppBar>
       </div>
     );
   }

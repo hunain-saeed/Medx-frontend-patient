@@ -33,10 +33,14 @@ export const login = (email, password) => {
 
     const body = JSON.stringify({ email, password });
     try {
-      const res = await axios.post(LoginPatient, body, config);
-
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-      dispatch(setAlert("user is loged in", "success"));
+      try {
+        const res = await axios.post(LoginPatient, body, config);
+        // TODO remove success alert msg and update user profile
+        dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+        dispatch(setAlert("user is loged in", "success"));
+      } catch (error) {
+        console.error(error);
+      }
     } catch (err) {
       const errors = err.response.data.errors;
       if (errors) {
