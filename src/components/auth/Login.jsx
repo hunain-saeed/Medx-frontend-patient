@@ -1,6 +1,6 @@
 import "./Login.css";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ import { signIn, signOut } from "../../actions";
 import { setAlert } from "../../actions/alert";
 import { login } from "../../actions/auth";
 
-
+// TODO when correct user login then navigate to correct router other then login
 class Login extends Component {
   state = { email: "", password: "" };
 
@@ -39,6 +39,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.props.isSignedIn) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="login">
         <div className="loginContainer">

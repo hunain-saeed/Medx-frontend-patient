@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import Login from "./Login";
 
-class LoginDoctor extends React.Component {
+class LoginPatient extends Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class LoginDoctor extends React.Component {
   }
 }
 
-export default LoginDoctor;
+export default LoginPatient;
