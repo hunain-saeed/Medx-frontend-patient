@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: white; /* #ececec; */
+}
+.registrer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.registrerContainer {
+  padding: 20px 50px;
+  border-radius: 2%;
+  background-color: #f4f7fc;
+}
+.form-control {
+  border-color: #f1f1f1;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #a7f9f3;
+}
+.bold {
+  font-weight: 600;
+}
+.mbottom {
+  margin-bottom: 0px;
+}
+label {
+  margin-bottom: 1px;
+  margin-left: 5px;
+}
+.mbottom input {
+  margin-bottom: 10px;
+}
+.mbottom textarea {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+  .registrerContainer{
+    width: 350px;
+    height: 1100px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .registrerContainer{
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .registrerContainer{
+    width: 650px;
+    height: 850px;
+  }
+}
+

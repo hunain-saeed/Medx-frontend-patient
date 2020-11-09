@@ -11,6 +11,8 @@ import { login } from "../../actions/auth";
 
 // TODO when correct user login then navigate to correct router other then login
 class Login extends Component {
+  // user determine that which database to search
+  // user = doctor means he is doctor
   state = { email: "", password: "" };
 
   onChange = (e) => {
@@ -18,7 +20,7 @@ class Login extends Component {
   };
   onFormSubmit = (event) => {
     event.preventDefault();
-    this.props.login(this.state.email, this.state.password);
+    this.props.login(this.state, this.props.name.toLowerCase());
 
     // TODO when complete remove this
     // if (this.state.password !== "1234") {
@@ -46,10 +48,10 @@ class Login extends Component {
       <div className="login">
         <div className="loginContainer">
           <div className="d-flex flex-column align-items-center">
-            <h1>LOGIN</h1>
+            <h2>LOGIN</h2>
             <p>
               Login for{" "}
-              <span className="font-weight-bold">{this.props.name}</span>
+              <span className="bold">{this.props.name}</span>
             </p>
           </div>
           <Form onSubmit={this.onFormSubmit}>
@@ -79,7 +81,7 @@ class Login extends Component {
               Login
             </Button>
           </Form>
-          <p className="mt-3">
+          <p className="mt-3 ml-1">
             Don't have an account?{" "}
             <Link
               to={"/register/" + this.props.name.toLowerCase()}

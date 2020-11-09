@@ -13,10 +13,37 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.login .loginContainer {
+.loginContainer {
   padding: 20px 50px;
-  height: 700px;
-  width: 450px;
-  border-radius: 3%;
+  height: 400px;
+  border-radius: 2%;
   background-color: #f4f7fc;
+}
+.form-control {
+  border-color: #f1f1f1;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #a7f9f3;
+}
+.custom-select {
+  border-color: #f1f1f1;
+}
+.custom-select:focus {
+  box-shadow: none;
+  border-color: #a7f9f3;
+}
+.bold {
+  font-weight: 600;
+}
+@media only screen and (min-width: 576px) {
+  .loginContainer {
+    width: 325px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loginContainer {
+    width: 450px;
+  }
 }

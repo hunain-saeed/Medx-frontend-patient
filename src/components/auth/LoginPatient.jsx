@@ -5,7 +5,7 @@ class LoginPatient extends Component {
   render() {
     return (
       <div>
-        <Login name="Paitent" change="doctor" />
+        <Login name="Patient" change="doctor" />
       </div>
     );
   }
