@@ -1,14 +1,27 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { signIn } from "../../actions";
+
 import Login from "./Login";
 
 class LoginPatient extends Component {
   render() {
-    return (
-      <div>
-        <Login name="Patient" change="doctor" />
-      </div>
-    );
+    if (localStorage.getItem("token") !== null) {
+      this.props.signIn();
+      return <Redirect to="/" />;
+    } else {
+      return (
+        <div>
+          <Login name="Patient" change="doctor" />
+        </div>
+      );
+    }
   }
 }
 
-export default LoginPatient;
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, {signIn})(LoginPatient);

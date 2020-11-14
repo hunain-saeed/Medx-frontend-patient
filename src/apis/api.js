@@ -3,6 +3,8 @@ export const Register = `${baseURL}/register/`;
 
 export const Login = `${baseURL}/login/`;
 
+// export const DocList = `${baseURL}/doctor`;
+
 // export const RegisterPatient = `${baseURL}/register/patient`;
 // export const RegisterDoctor = `${baseURL}/register/doctor`;
 

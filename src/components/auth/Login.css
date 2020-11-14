@@ -6,19 +6,6 @@
 body {
   background-color: white;
 }
-.login {
-  margin-top: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.loginContainer {
-  padding: 20px 50px;
-  height: 400px;
-  border-radius: 2%;
-  background-color: #f4f7fc;
-}
 .form-control {
   border-color: #f1f1f1;
 }
@@ -36,14 +23,40 @@ body {
 .bold {
   font-weight: 600;
 }
-@media only screen and (min-width: 576px) {
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginContainer {
+  height: auto;
+  border-radius: 2%;
+  background-color: #f4f7fc;
+  /* border: 1px solid #cfcfcf; */
+  /* box-shadow: 2px 2px 8px #cfcfcf, -2px -2px 8px #cfcfcf; */
+}
+@media only screen and (min-width: 100px) {
+  .login {
+    margin-top: 45px;
+  }
   .loginContainer {
-    width: 325px;
+    width: 290px;
+    padding: 20px 30px;
   }
 }
-
+@media only screen and (min-width: 576px) {
+  .login {
+    margin-top: 70px;
+  }
+  .loginContainer {
+    width: 325px;
+    padding: 20px 40px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .loginContainer {
     width: 450px;
+    padding: 20px 50px;
   }
 }

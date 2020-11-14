@@ -20,17 +20,19 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case REGISTER_SUCCESS:
-    case SIGN_IN:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);
       return { ...state, ...action.payload, isSignedIn: true, loading: false };
+
+    case SIGN_IN:
+      return { ...state, isSignedIn: true, loading: false };
 
     case REGISTER_FAIL:
     case SIGN_OUT:
     case LOGIN_FAIL:
       localStorage.removeItem("token");
       return { ...state, token: null, isSignedIn: false, loading: false };
-    
+
     default:
       return state;
   }

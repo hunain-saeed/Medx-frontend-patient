@@ -2,8 +2,7 @@ import "./Login.css";
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 
 import { signIn, signOut } from "../../actions";
 import { setAlert } from "../../actions/alert";
@@ -11,8 +10,6 @@ import { login } from "../../actions/auth";
 
 // TODO when correct user login then navigate to correct router other then login
 class Login extends Component {
-  // user determine that which database to search
-  // user = doctor means he is doctor
   state = { email: "", password: "" };
 
   onChange = (e) => {
@@ -20,24 +17,9 @@ class Login extends Component {
   };
   onFormSubmit = (event) => {
     event.preventDefault();
+    // name determine that which database to search
+    // name = doctor means he is doctor
     this.props.login(this.state, this.props.name.toLowerCase());
-
-    // TODO when complete remove this
-    // if (this.state.password !== "1234") {
-    //   console.log("not match");
-    //   this.props.setAlert("Password do not match", "danger");
-    //   this.props.signOut();
-    // } else {
-    //   this.props.setAlert("Password match", "success");
-    //   this.props.signIn();
-    // }
-    // if (!this.props.isSignedIn) {
-    //   this.props.signIn();
-    // } else if (this.props.isSignedIn) {
-    //   this.props.signOut();
-    // } else {
-    //   return null;
-    // }
   };
 
   render() {
@@ -50,8 +32,7 @@ class Login extends Component {
           <div className="d-flex flex-column align-items-center">
             <h2>LOGIN</h2>
             <p>
-              Login for{" "}
-              <span className="bold">{this.props.name}</span>
+              Login for <span className="bold">{this.props.name}</span>
             </p>
           </div>
           <Form onSubmit={this.onFormSubmit}>
@@ -81,7 +62,7 @@ class Login extends Component {
               Login
             </Button>
           </Form>
-          <p className="mt-3 ml-1">
+          <p className="mt-3 mb-0">
             Don't have an account?{" "}
             <Link
               to={"/register/" + this.props.name.toLowerCase()}

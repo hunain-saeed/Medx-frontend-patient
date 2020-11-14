@@ -2,12 +2,13 @@ import "./NavBar.css"
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../actions";
+import { signOut } from "../../actions";
 // Material Ui
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import logo from '../../logo/logo4.png'
 
 // Custorm component import
 import NavItem from "./NavItem";
@@ -47,7 +48,7 @@ class NavBar extends React.Component {
           <Toolbar>
             <Typography variant="h4" style={{ flexGrow: 1 }}>
               <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-                Medx
+              <img src={logo} />
               </Link>
             </Typography>
             {this.renderAuthButton()}

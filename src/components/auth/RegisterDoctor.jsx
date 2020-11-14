@@ -1,7 +1,6 @@
 import "./Register.css";
 import React from "react";
-import { Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 import makeAnimated from "react-select/animated";
 import Select from "react-select";
 
@@ -192,7 +191,7 @@ class RegisterDoctor extends React.Component {
                   type="number"
                   min="0"
                   name="charges"
-                  step="0.5"
+                  step="1"
                   class="form-control currency"
                   id="c2"
                   onChange={(e) => this.onChange(e)}
