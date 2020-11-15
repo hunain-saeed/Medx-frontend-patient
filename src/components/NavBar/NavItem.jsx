@@ -33,19 +33,13 @@ function NavItems(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={props.route + "/patient"}
-            style={{ textDecoration: "none" }}
-          >
-            As Patient
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to={props.route + "/doctor"} style={{ textDecoration: "none" }}>
-            As Doctor
-          </Link>
-        </MenuItem>
+        <Link to={props.route + "/patient"} style={{ textDecoration: "none" }}>
+          <MenuItem onClick={handleClose}>As Patient</MenuItem>
+        </Link>
+
+        <Link to={props.route + "/doctor"} style={{ textDecoration: "none" }}>
+          <MenuItem onClick={handleClose}>As Doctor</MenuItem>
+        </Link>
       </Menu>
     </div>
   );

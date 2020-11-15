@@ -74,7 +74,7 @@ class RegisterDoctor extends React.Component {
             </p>
           </div>
           <Form>
-            {/* Name and phone */}
+            {/* Name and pno */}
             <Form.Group className="mbottom row">
               <div className="col-md-6">
                 <Form.Label>Name</Form.Label>
@@ -99,27 +99,29 @@ class RegisterDoctor extends React.Component {
               </div>
             </Form.Group>
 
-            {/* Email and password */}
-            <Form.Group className="mbottom row">
+            {/* Email Address */}
+            <Form.Group className="mbottom">
+              {/* <div className="col-md-6"> */}
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                placeholder="Email"
+                type="email"
+                name="email"
+                required
+                onChange={(e) => this.onChange(e)}
+              />
+              {/* </div>
               <div className="col-md-6">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Phone</Form.Label>
                 <Form.Control
-                  placeholder="Email"
-                  type="email"
-                  name="email"
+                  placeholder="Phone"
+                  type="tel"
+                  id="phone"
+                  name="phone"
                   required
                   onChange={(e) => this.onChange(e)}
                 />
-              </div>
-              <div className="col-md-6">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  onChange={(e) => this.onChange(e)}
-                />
-              </div>
+              </div> */}
             </Form.Group>
 
             {/* Address */}
@@ -156,12 +158,12 @@ class RegisterDoctor extends React.Component {
               </div>
             </Form.Group>
 
-            {/* Education, Description */}
+            {/* Education */}
             <Form.Group className="mbottom">
               <Form.Label>Education</Form.Label>
               <Form.Control
                 placeholder="Education"
-                type="Text"
+                type="text"
                 name="edu"
                 class="form-group"
                 onChange={(e) => this.onChange(e)}
@@ -180,6 +182,23 @@ class RegisterDoctor extends React.Component {
                 class="form-group"
                 onChange={(e) => this.onChange(e)}
               />
+            </Form.Group>
+
+            {/* password and confirm password */}
+            <Form.Group className="mbottom row">
+              <div className="col-md-6">
+                <Form.Label>Start Time</Form.Label>
+                <Form.Control type="time" name="start_time" />
+              </div>
+              <div className="col-md-6">
+                <Form.Label>Duration</Form.Label>
+                <Form.Control
+                  placeholder="Number of hours"
+                  type="number"
+                  min="1"
+                  name="duration"
+                />
+              </div>
             </Form.Group>
 
             {/* Charges, Patients */}
@@ -214,7 +233,7 @@ class RegisterDoctor extends React.Component {
             </Form.Group>
 
             {/* Specilization */}
-            <Form.Group className="mb-4">
+            <Form.Group className="mbspe">
               <Form.Label>Specilization</Form.Label>
               <Select
                 name="spec"
@@ -227,7 +246,27 @@ class RegisterDoctor extends React.Component {
               />
             </Form.Group>
 
-            <Button variant="success" block type="submit">
+            {/* password and confirm password */}
+            <Form.Group className="mbottom row">
+              <div className="col-md-6">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                />
+              </div>
+              <div className="col-md-6">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control
+                  placeholder="Confirm Password"
+                  type="password"
+                  name="cpassword"
+                />
+              </div>
+            </Form.Group>
+
+            <Button className="mt-2" variant="success" block type="submit">
               Register
             </Button>
           </Form>

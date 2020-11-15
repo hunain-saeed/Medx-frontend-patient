@@ -74,7 +74,7 @@ class RegisterPatient extends React.Component {
             </p>
           </div>
           <Form>
-            {/* Name and phone */}
+            {/* Name and email */}
             <Form.Group className="mbottom row">
               <div className="col-md-6">
                 <Form.Label>Name</Form.Label>
@@ -87,38 +87,14 @@ class RegisterPatient extends React.Component {
                 />
               </div>
               <div className="col-md-6">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control
-                  placeholder="Phone"
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  onChange={(e) => this.onChange(e)}
-                />
-              </div>
-            </Form.Group>
-
-            {/* Email and password */}
-            <Form.Group className="mbottom row">
-              <div className="col-md-6">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  placeholder="Email"
-                  type="email"
-                  name="email"
-                  required
-                  onChange={(e) => this.onChange(e)}
-                />
-              </div>
-              <div className="col-md-6">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  onChange={(e) => this.onChange(e)}
-                />
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                placeholder="Email"
+                type="email"
+                name="email"
+                required
+                onChange={(e) => this.onChange(e)}
+              />
               </div>
             </Form.Group>
 
@@ -134,7 +110,7 @@ class RegisterPatient extends React.Component {
             </Form.Group>
 
             {/* Date of Birth, Gender */}
-            <Form.Group className="mb-4 row">
+            <Form.Group className="mbottom row">
               <div className="col-md-6">
                 <Form.Label>Date of Birth</Form.Label>
                 <Form.Control
@@ -156,7 +132,29 @@ class RegisterPatient extends React.Component {
               </div>
             </Form.Group>
 
-            <Button variant="success" block type="submit">
+            {/* Password, confirm password */}
+            <Form.Group className="mbottom row">
+              <div className="col-md-6">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={(e) => this.onChange(e)}
+                />
+              </div>
+              <div className="col-md-6">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control
+                  placeholder="Confirm Password"
+                  type="password"
+                  name="cpassword"
+                  onChange={(e) => this.onChange(e)}
+                />
+              </div>
+            </Form.Group>
+
+            <Button className="mt-2" variant="success" block type="submit">
               Register
             </Button>
           </Form>
