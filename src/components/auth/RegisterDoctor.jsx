@@ -184,7 +184,7 @@ class RegisterDoctor extends React.Component {
               />
             </Form.Group>
 
-            {/* password and confirm password */}
+            {/* start time and duration */}
             <Form.Group className="mbottom row">
               <div className="col-md-6">
                 <Form.Label>Start Time</Form.Label>
@@ -211,7 +211,7 @@ class RegisterDoctor extends React.Component {
                   min="0"
                   name="charges"
                   step="1"
-                  class="form-control currency"
+                  className="form-control currency"
                   id="c2"
                   onChange={(e) => this.onChange(e)}
                 />
@@ -224,9 +224,9 @@ class RegisterDoctor extends React.Component {
                   min="0"
                   step="1"
                   name="numpatients"
-                  class="form-control"
+                  className="form-control"
                   max="30"
-                  id="c2"
+                  id="c1"
                   onChange={(e) => this.onChange(e)}
                 />
               </div>

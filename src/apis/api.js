@@ -1,4 +1,5 @@
 const baseURL = "http://localhost:4000/api";
+
 export const Register = `${baseURL}/register/`;
 
 export const Login = `${baseURL}/login/`;
