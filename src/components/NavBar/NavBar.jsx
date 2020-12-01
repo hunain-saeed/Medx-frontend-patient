@@ -1,4 +1,4 @@
-import "./NavBar.css"
+import "./NavBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -7,11 +7,12 @@ import { signOut } from "../../actions";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import logo from '../../logo/logo4.png'
+
+import logo from "../../logo/logo4.png";
 
 // Custorm component import
 import NavItem from "./NavItem";
+import NavProfile from "./NavProfile";
 
 class NavBar extends React.Component {
   onClickLogout = () => {
@@ -27,11 +28,9 @@ class NavBar extends React.Component {
       );
     } else if (this.props.isSignedIn) {
       return (
-        <Button id="button">
-          <Link onClick={this.onClickLogout} to="/" className="logoutButton">
-            Logout
-          </Link>
-        </Button>
+        <React.Fragment>
+          <NavProfile logout={this.onClickLogout} />
+        </React.Fragment>
       );
     } else {
       return null;
@@ -45,10 +44,10 @@ class NavBar extends React.Component {
           position="static"
           style={{ background: "#343a40", flexGrow: 1 }}
         >
-          <Toolbar>
+          <Toolbar className="navc">
             <Typography variant="h4" style={{ flexGrow: 1 }}>
               <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-              <img src={logo} />
+                <img src={logo} alt="Logo" />
               </Link>
             </Typography>
             {this.renderAuthButton()}

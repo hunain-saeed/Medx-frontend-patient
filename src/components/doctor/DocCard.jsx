@@ -3,27 +3,35 @@ import { Card, Button } from "react-bootstrap";
 
 class DocCard extends Component {
   render() {
+    const {
+      avatar,
+      name,
+      specializations,
+      education,
+      charges,
+    } = this.props.doc;
     return (
       <div className="mb-4">
         <Card>
           <div className="row no-gutters">
             <div className="col-lg-2 col-12 align-self-center xsmall">
-              <img
-                className="img"
-                src={this.props.img ? this.props.img: null}
-              />
+              <img className="img" src={avatar ? avatar : null} alt="avatar" />
             </div>
             <div className="col-lg-7 col-12 line">
               <Card.Body>
-                <Card.Title className="mb-1">Dr. {this.props.name}</Card.Title>
+                <Card.Title className="mb-1">Dr. {name}</Card.Title>
                 <Card.Text className="my-0 text-muted">
-                  Skin Specialist, Anaesthetist, Skin Specialist, Anaesthetist
+                  {specializations.map(spec => {
+                    return spec.specialization + ", ";
+                  })}
                 </Card.Text>
                 <Card.Text className="my-0 text-muted">
-                  MBBS, MCPS (Dermatology)
+                  {education.map((ed) => {
+                    return ed + ", ";
+                  })}
                 </Card.Text>
                 <Card.Subtitle className="my-2">
-                  Charges: Rs. 2000
+                  Charges: Rs. {charges}
                 </Card.Subtitle>
               </Card.Body>
             </div>

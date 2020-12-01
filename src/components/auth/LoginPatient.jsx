@@ -9,7 +9,7 @@ class LoginPatient extends Component {
   render() {
     if (localStorage.getItem("token") !== null) {
       this.props.signIn();
-      return <Redirect to="/" />;
+      return <Redirect to="/doctor/list" />;
     } else {
       return (
         <div>
