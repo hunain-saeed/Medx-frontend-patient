@@ -48,9 +48,15 @@ export const register = (user, name) => {
       // TODO remove success alert msg and update user profile
       dispatch(setAlert("User registerd!", "success"));
     } catch (err) {
-      const errors = err.response.data.errors;
-      if (errors) {
-        errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+      console.log(err);
+      
+      if (err.response) {
+        const errors = err.response.data
+          ? err.response.data.errors
+          : err.response;
+        if (errors) {
+          errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+        }
       }
 
       dispatch({ type: REGISTER_FAIL });

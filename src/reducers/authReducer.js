@@ -11,7 +11,7 @@ import {
 //   isSignedIn: null,
 // };
 const INITIAL_STATE = {
-  token: localStorage.getItem("token"),
+  // token: localStorage.getItem("token"),
   isSignedIn: null,
   loading: true,
   user: null,
@@ -22,7 +22,7 @@ export default (state = INITIAL_STATE, action) => {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);
-      return { ...state, ...action.payload, isSignedIn: true, loading: false };
+      return { ...state,  isSignedIn: true, loading: false };  //...action.payload,
 
     case SIGN_IN:
       return { ...state, isSignedIn: true, loading: false };
@@ -31,7 +31,7 @@ export default (state = INITIAL_STATE, action) => {
     case SIGN_OUT:
     case LOGIN_FAIL:
       localStorage.removeItem("token");
-      return { ...state, token: null, isSignedIn: false, loading: false };
+      return { ...state,  isSignedIn: false, loading: false };  //token: null,
 
     default:
       return state;

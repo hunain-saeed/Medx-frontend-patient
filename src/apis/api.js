@@ -6,6 +6,9 @@ export const Login = `${baseURL}/login/`;
 
 export const DocList = `${baseURL}/doctor`;
 
+export const SpecList = `${baseURL}/specialization`;
+
+
 // export const RegisterPatient = `${baseURL}/register/patient`;
 // export const RegisterDoctor = `${baseURL}/register/doctor`;
 

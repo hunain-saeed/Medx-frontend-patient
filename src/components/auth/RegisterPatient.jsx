@@ -3,9 +3,12 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-
 import { register } from "../../actions/auth";
+
+// import UI
+import Button from "react-bootstrap/Button";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 
 // TODO after register prevent to navigate to register or login route and if type path then on regresh keep user loggedin
 class RegisterPatient extends React.Component {
@@ -14,29 +17,59 @@ class RegisterPatient extends React.Component {
     email: "",
     address: "",
     dob: "",
-    gender: "",
+    gender: "Male",
     password: "",
     cpassword: "",
     passmsg: "",
+    cpassmsg: "",
+    type: "password",
   };
+
   onChange = (e) => {
     this.setState({ ...this.state, [e.target.name]: e.target.value });
   };
+
   onRegister = (event) => {
     event.preventDefault();
     if (this.state.password !== this.state.cpassword) {
-      this.setState({ passmsg: "Password do not match" });
+      this.setState({ cpassmsg: "Password do not match" });
     } else {
       const { name, email, address, dob, gender, password } = this.state;
+
       this.props.register(
         { name, email, address, dob, gender, password },
         "patient"
       );
     }
   };
+
+  passLen = (e) => {
+    this.onChange(e);
+    if (e.target.value.length === 0) {
+      this.setState({ passmsg: "" });
+    } else if (e.target.value.length < 6) {
+      this.setState({ passmsg: "* Password must be at least 6 characters." });
+    } else {
+      this.setState({ passmsg: "" });
+    }
+  };
+
+  comPass = (e) => {
+    this.onChange(e);
+    if (this.state.password !== e.target.value) {
+      this.setState({ cpassmsg: "* Password do not match" });
+    } else {
+      this.setState({ cpassmsg: "" });
+    }
+  };
+
+  showHide = () => {
+    this.setState({ type: this.state.type === 'text' ? 'password' : 'text' });
+  };
+
   render() {
     if (this.props.isSignedIn) {
-      return <Redirect to="/" />;
+      return <Redirect to="/doctor/list" />;
     }
     return (
       <div className="registrer">
@@ -96,7 +129,7 @@ class RegisterPatient extends React.Component {
                   max="2013-01-01"
                   value={this.state.dob}
                   placeholder="Date of Birth"
-                  onChange={(e) => this.onChange(e)}
+                  onChange={(e) => {}}
                 />
               </div>
               <div className="col-md-6">
@@ -105,6 +138,7 @@ class RegisterPatient extends React.Component {
                   as="select"
                   name="gender"
                   custom
+                  value={this.state.gender}
                   onChange={(e) => this.onChange(e)}
                 >
                   <option></option>
@@ -119,14 +153,26 @@ class RegisterPatient extends React.Component {
             <Form.Group className="mbottom row">
               <div className="col-md-6">
                 <Form.Label>Password</Form.Label>
-                <Form.Control
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  minLength="6"
-                  value={this.state.password}
-                  onChange={(e) => this.onChange(e)}
-                />
+                <div className="d-flex show">
+                  <Form.Control
+                    placeholder="Password"
+                    type={this.state.type}
+                    name="password"
+                    minLength="6"
+                    value={this.state.password}
+                    onChange={(e) => this.passLen(e)}
+                  />
+                  <span onClick={this.showHide}>
+                    {this.state.type === "text" ? (
+                      <VisibilityOffIcon className="icon" />
+                    ) : (
+                      <VisibilityIcon className="icon" />
+                    )}
+                  </span>
+                </div>
+                <Form.Text style={{ color: "red" }}>
+                  {this.state.passmsg}
+                </Form.Text>
               </div>
               <div className="col-md-6">
                 <Form.Label>Confirm Password</Form.Label>
@@ -135,11 +181,10 @@ class RegisterPatient extends React.Component {
                   type="password"
                   name="cpassword"
                   value={this.state.cpassword}
-                  onChange={(e) => this.onChange(e)}
-                  onClick={() => this.setState({ passmsg: "" })}
+                  onChange={(e) => this.comPass(e)}
                 />
                 <Form.Text style={{ color: "red" }}>
-                  {this.state.passmsg}
+                  {this.state.cpassmsg}
                 </Form.Text>
               </div>
             </Form.Group>

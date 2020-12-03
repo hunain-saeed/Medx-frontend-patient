@@ -66,3 +66,11 @@ label {
     width: 650px;
   }
 }
+
+.show {
+  align-items: center;
+}
+
+.icon {
+  margin-bottom: 10px;
+}
