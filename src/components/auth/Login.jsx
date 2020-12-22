@@ -30,10 +30,8 @@ class Login extends Component {
       <div className="login">
         <div className="loginContainer">
           <div className="d-flex flex-column align-items-center">
-            <h2>LOGIN</h2>
-            <p>
-              Login for <span className="bold">{this.props.name}</span>
-            </p>
+            <h2>{this.props.name.toUpperCase()}</h2>
+            <h4 className="text-m">LOGIN</h4>
           </div>
           <Form onSubmit={this.onFormSubmit}>
             <Form.Group controlId="formBasicEmail">

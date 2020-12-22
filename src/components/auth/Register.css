@@ -12,6 +12,15 @@
   height: auto;
   background-color: #f4f7fc;
 }
+#dobinput{
+  width: 100%;
+}
+#passinput{
+  width: 100%;
+}
+#stimeinput{
+  width: 100%;
+}
 .form-control {
   border-color: #f1f1f1;
 }
@@ -40,7 +49,7 @@ label {
 .mbottom input {
   margin-bottom: 10px;
 }
-.mbottom textarea {
+.mbottom small {
   margin-bottom: 10px;
 }
 @media only screen and (min-width: 100px) {

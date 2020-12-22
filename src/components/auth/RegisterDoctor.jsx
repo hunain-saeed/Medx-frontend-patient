@@ -33,6 +33,7 @@ class RegisterDoctor extends React.Component {
     password: "",
     cpassword: "",
     passmsg: "",
+    descmsg: "",
     type: "password",
   };
 
@@ -90,6 +91,17 @@ class RegisterDoctor extends React.Component {
     }
 
     console.log(this.state);
+  };
+
+  descLen = (e) => {
+    if (e.target.value.length <= 101) {
+      this.onChange(e);
+      this.setState({
+        descmsg: `Content limited to 100 charachters. Remaning: ${
+          100 - e.target.value.length
+        }`,
+      });
+    }
   };
 
   convertSpec = () => {
@@ -211,6 +223,7 @@ class RegisterDoctor extends React.Component {
               <div className="col-md-6">
                 <Form.Label>Date of Birth</Form.Label>
                 <Form.Control
+                  id="dobinput"
                   type="date"
                   name="dob"
                   max="1996-01-01"
@@ -280,12 +293,16 @@ class RegisterDoctor extends React.Component {
                 as="textarea"
                 placeholder="Discription"
                 rows="4"
+                minLength="100"
                 type="Text"
                 name="description"
-                className="form-group"
+                className="form-group mb-0"
                 value={this.state.description}
-                onChange={(e) => this.onChange(e)}
+                onChange={(e) => this.descLen(e)}
               />
+              <Form.Text style={{ color: "gray" }}>
+                {this.state.descmsg}
+              </Form.Text>
             </Form.Group>
 
             {/* start time and duration */}
@@ -293,6 +310,7 @@ class RegisterDoctor extends React.Component {
               <div className="col-md-6">
                 <Form.Label>Start Time</Form.Label>
                 <Form.Control
+                  id="stimeinput"
                   type="time"
                   name="start_time"
                   value={this.state.start_time}
@@ -377,6 +395,7 @@ class RegisterDoctor extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <div className="d-flex show">
                   <Form.Control
+                  id="passinput"
                     placeholder="Password"
                     type={this.state.type}
                     name="password"

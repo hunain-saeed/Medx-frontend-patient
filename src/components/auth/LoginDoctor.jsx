@@ -9,7 +9,7 @@ class LoginDoctor extends React.Component {
   render() {
     if (localStorage.getItem("token") !== null) {
       this.props.signIn();
-      return <Redirect to="/" />;
+      return <Redirect to="/profile" />;
     } else {
       return (
         <div>
