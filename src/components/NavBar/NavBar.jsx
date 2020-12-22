@@ -2,11 +2,13 @@ import "./NavBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../../actions";
+import { signOut, signIn } from "../../actions";
+
 // Material Ui
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 import logo from "../../logo/logo4.png";
 
@@ -19,6 +21,11 @@ class NavBar extends React.Component {
     this.props.signOut();
   };
   renderAuthButton = () => {
+    if (localStorage.getItem("token") !== null) {
+      this.props.signIn();
+    } else {
+      this.props.signOut();
+    }
     if (!this.props.isSignedIn) {
       return (
         <React.Fragment>
@@ -29,6 +36,12 @@ class NavBar extends React.Component {
     } else if (this.props.isSignedIn) {
       return (
         <React.Fragment>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button className="white">Home</Button>
+          </Link>
+          <Link to="/doctor/list" style={{ textDecoration: "none" }}>
+            <Button className="white">Doctors</Button>
+          </Link>
           <NavProfile logout={this.onClickLogout} />
         </React.Fragment>
       );
@@ -62,4 +75,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signOut })(NavBar);
+export default connect(mapStateToProps, { signOut, signIn })(NavBar);

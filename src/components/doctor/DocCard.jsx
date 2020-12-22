@@ -9,6 +9,7 @@ class DocCard extends Component {
       specializations,
       education,
       charges,
+      description,
     } = this.props.doc;
     return (
       <div className="mb-4">
@@ -20,12 +21,12 @@ class DocCard extends Component {
             <div className="col-lg-7 col-12 line">
               <Card.Body>
                 <Card.Title className="mb-1">Dr. {name}</Card.Title>
-                <Card.Text className="my-0 text-muted">
-                  {specializations.map(spec => {
+                <Card.Text className="my-0 text-sub">
+                  {specializations.map((spec) => {
                     return spec.specialization + ", ";
                   })}
                 </Card.Text>
-                <Card.Text className="my-0 text-muted">
+                <Card.Text className="my-0 text-sub">
                   {education.map((ed) => {
                     return ed + ", ";
                   })}
@@ -33,12 +34,13 @@ class DocCard extends Component {
                 <Card.Subtitle className="my-2">
                   Charges: Rs. {charges}
                 </Card.Subtitle>
+                <Card.Text>"{description}"</Card.Text>
               </Card.Body>
             </div>
             <div className="col-lg-3 col-12 footer px-3 align-self-center">
-              <Button variant="outline-primary" className="margin" block>
+              {/* <Button variant="outline-primary" className="margin" block>
                 View Doctor Profile
-              </Button>
+              </Button> */}
               <Button variant="outline-info" block>
                 Book Appointment
               </Button>

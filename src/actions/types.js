@@ -10,8 +10,9 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 
-export const USER_LOADED = "USER_LOADED";
-export const AUTH_ERROR = "AUTH_ERROR";
+export const PAT_PROFILE = "PAT_PROFILE";
+export const DOC_PROFILE = "DOC_PROFILE";
+// export const AUTH_ERROR = "AUTH_ERROR";
 
 export const GET_DOCTORS = "GET_DOCTORS";
 

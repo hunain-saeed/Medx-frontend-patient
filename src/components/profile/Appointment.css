@@ -1,0 +1,22 @@
+.cusCard {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.cusCardContainer {
+  padding: 10px 20px;
+  border-radius: 2%;
+  height: auto;
+  width: auto;
+  background-color: #f4f7fc;
+}
+.text-m {
+  color: #596168;
+}
+@media only screen and (min-width: 100px) {
+  .list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

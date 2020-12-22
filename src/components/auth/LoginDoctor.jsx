@@ -1,14 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { signIn } from "../../actions";
 
 import Login from "./Login";
 
 class LoginDoctor extends React.Component {
   render() {
-    if (localStorage.getItem("token") !== null) {
-      this.props.signIn();
+    if (this.props.isSignedIn) {
       return <Redirect to="/profile" />;
     } else {
       return (
@@ -24,4 +22,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, {signIn})(LoginDoctor);
+export default connect(mapStateToProps)(LoginDoctor);

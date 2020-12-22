@@ -6,7 +6,9 @@
   color: white;
   text-decoration: none;
 }
-
+.white {
+  color: white !important;
+}
 #button:hover {
   background-color: #2e3338;
 }

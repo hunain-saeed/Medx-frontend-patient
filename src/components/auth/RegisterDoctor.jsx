@@ -152,17 +152,15 @@ class RegisterDoctor extends React.Component {
 
     // TODO nevigate to appointment route
     if (this.props.isSignedIn) {
-      return <Redirect to="/" />;
+      return <Redirect to="/profile" />;
     }
 
     return (
       <div className="registrer">
         <div className="registrerContainer">
           <div className="d-flex flex-column align-items-center">
-            <h2>REGISTRATION</h2>
-            <p>
-              Register as a <span className="bold">Doctor</span>
-            </p>
+            <h2>DOCTOR</h2>
+            <h4 className="text-m">REGISTRATION</h4>
           </div>
           <Form onSubmit={this.onRegister}>
             {/* Name and pno */}
@@ -183,7 +181,6 @@ class RegisterDoctor extends React.Component {
                 <Form.Control
                   placeholder="Phone"
                   type="tel"
-                  id="phone"
                   name="phoneno"
                   value={this.state.phoneno}
                   required
@@ -223,7 +220,6 @@ class RegisterDoctor extends React.Component {
               <div className="col-md-6">
                 <Form.Label>Date of Birth</Form.Label>
                 <Form.Control
-                  id="dobinput"
                   type="date"
                   name="dob"
                   max="1996-01-01"
@@ -310,7 +306,6 @@ class RegisterDoctor extends React.Component {
               <div className="col-md-6">
                 <Form.Label>Start Time</Form.Label>
                 <Form.Control
-                  id="stimeinput"
                   type="time"
                   name="start_time"
                   value={this.state.start_time}
@@ -395,7 +390,6 @@ class RegisterDoctor extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <div className="d-flex show">
                   <Form.Control
-                  id="passinput"
                     placeholder="Password"
                     type={this.state.type}
                     name="password"

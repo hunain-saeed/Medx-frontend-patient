@@ -6,20 +6,14 @@
   align-items: center;
   flex-direction: column;
 }
+.text-m {
+  color: #596168;
+}
 .registrerContainer {
   padding: 20px 50px;
   border-radius: 2%;
   height: auto;
   background-color: #f4f7fc;
-}
-#dobinput{
-  width: 100%;
-}
-#passinput{
-  width: 100%;
-}
-#stimeinput{
-  width: 100%;
 }
 .form-control {
   border-color: #f1f1f1;

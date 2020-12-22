@@ -35,7 +35,7 @@ function NavItems(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/profile" style={{ textDecoration: "none" }}>
           <MenuItem onClick={handleClose}>Profile</MenuItem>
         </Link>
 

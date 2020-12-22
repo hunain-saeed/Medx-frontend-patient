@@ -8,6 +8,9 @@ export const DocList = `${baseURL}/doctor`;
 
 export const SpecList = `${baseURL}/specialization`;
 
+export const PatProfile = `${baseURL}/patient/profile`;
+
+export const DocProfile = `${baseURL}/doctor/profile`
 
 // export const RegisterPatient = `${baseURL}/register/patient`;
 // export const RegisterDoctor = `${baseURL}/register/doctor`;

@@ -64,7 +64,7 @@ class RegisterPatient extends React.Component {
   };
 
   showHide = () => {
-    this.setState({ type: this.state.type === 'text' ? 'password' : 'text' });
+    this.setState({ type: this.state.type === "text" ? "password" : "text" });
   };
 
   render() {
@@ -75,10 +75,8 @@ class RegisterPatient extends React.Component {
       <div className="registrer">
         <div className="registrerContainer">
           <div className="d-flex flex-column align-items-center">
-            <h2>REGISTRATION</h2>
-            <p>
-              Register as a <span className="bold">Patient</span>
-            </p>
+            <h2>PATIENT</h2>
+            <h4 className="text-m">REGISTRATION</h4>
           </div>
           <Form onSubmit={this.onRegister}>
             {/* Name and email */}
@@ -124,12 +122,13 @@ class RegisterPatient extends React.Component {
               <div className="col-md-6">
                 <Form.Label>Date of Birth</Form.Label>
                 <Form.Control
+                  id="dobinput"
                   type="date"
                   name="dob"
                   max="2013-01-01"
                   value={this.state.dob}
                   placeholder="Date of Birth"
-                  onChange={(e) => {}}
+                  onChange={(e) => this.onChange(e)}
                 />
               </div>
               <div className="col-md-6">
@@ -155,6 +154,7 @@ class RegisterPatient extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <div className="d-flex show">
                   <Form.Control
+                    id="passinput"
                     placeholder="Password"
                     type={this.state.type}
                     name="password"

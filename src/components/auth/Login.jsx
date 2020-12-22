@@ -4,7 +4,6 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Form, Button } from "react-bootstrap";
 
-import { signIn, signOut } from "../../actions";
 import { setAlert } from "../../actions/alert";
 import { login } from "../../actions/auth";
 
@@ -79,6 +78,6 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signIn, signOut, setAlert, login })(
+export default connect(mapStateToProps, { setAlert, login })(
   Login
 );

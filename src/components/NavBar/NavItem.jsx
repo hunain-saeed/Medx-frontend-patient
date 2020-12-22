@@ -22,7 +22,7 @@ function NavItems(props) {
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
-        style={{ color: "white" }}
+        className="white"
       >
         {props.name}
       </Button>
