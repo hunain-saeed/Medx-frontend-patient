@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class DocCard extends Component {
   render() {
     const {
+      _id,
       avatar,
       name,
       specializations,
@@ -41,9 +43,14 @@ class DocCard extends Component {
               {/* <Button variant="outline-primary" className="margin" block>
                 View Doctor Profile
               </Button> */}
-              <Button variant="outline-info" block>
-                Book Appointment
-              </Button>
+              <Link
+                to={`/booking/${_id}`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <Button variant="outline-info" className="home-color" block>
+                  Book Appointment
+                </Button>
+              </Link>
             </div>
           </div>
         </Card>

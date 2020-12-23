@@ -2,11 +2,15 @@ import { combineReducers } from "redux";
 import authReducer from "./authReducer";
 import alertReducer from "./alertReducer";
 import profileReducer from "./profileReducer";
-import specReducer from "./specReducer";
+import sheduleReducer from "./sheduleReducer";
+import curDocReducer from "./curDocReducer";
+import appListReducer from "./appListReducer";
 
 export default combineReducers({
   auth: authReducer,
+  applist: appListReducer,
   alert: alertReducer,
   profile: profileReducer,
-  spec: specReducer,
+  curDoc: curDocReducer,
+  shedule: sheduleReducer,
 });

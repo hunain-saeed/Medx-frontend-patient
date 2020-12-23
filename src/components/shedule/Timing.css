@@ -1,0 +1,6 @@
+.img {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+  background-color: #dfdfdf;
+}

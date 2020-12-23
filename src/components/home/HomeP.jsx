@@ -1,64 +1,63 @@
+import "./Timing.css";
 import React from "react";
-import { ThemeProvider } from "@material-ui/core/styles";
-import myTheme from "../theme";
 
-import "./Home.css";
+import { Card } from "react-bootstrap";
+import Slider from "react-slick";
+import SliderCard from "./SliderCard";
 
-class Home extends React.Component {
+class Timing extends React.Component {
   render() {
+    var settings = {
+      dots: false,
+    };
     return (
-      <div className="body">
-        <ThemeProvider theme={myTheme}>
-          <form className="ss" onsubmit="event.preventDefault();" role="search">
-            <input
-              className="search"
-              id="search"
-              type="search"
-              placeholder="Search..."
-              autofocus
-              required
-            />
-            <button className="searchbutt" type="submit">
-              Search
-            </button>
-          </form>
-
-          <div inline className="conbutt">
-            <button className="row speccard mt-5">
-              <div className="butt imgden" />
+      <div>
+        <div className="container ">
+          <div className="d-flex justify-content-center ">
+            <div className="image"></div>
+            <div className="flex-column">
               <div>
-                Dentist
+                <h5>Ronald McDonald</h5>
               </div>
-            </button>
-            <button className="row speccard">
-              <div className="butt img1" />
-              <div variant="outline-info" block>
-                Orthopaedist
+              <div>
+                <h5 className="specc">Dentist</h5>
               </div>
-            </button>
-            <button className="row speccard">
-              <div className="butt img3" />
-              <div variant="outline-info" block>
-                Paediatrician
-              </div>{" "}
-            </button>
-
-            <button className="row speccard">
-              <div className="butt img4" />
-              <div variant="outline-info" block>
-                Dermatologist
-              </div>{" "}
-            </button>
-            <button className="row speccard">
-              <div className="butt img6" />
-              <div variant="outline-info" block>
-                Eye specialist
-              </div>{" "}
-            </button>
+              <div>
+                <p>Fee: Rs 2000</p>
+              </div>
+            </div>
           </div>
-        </ThemeProvider>
+        </div>
+
+        <Card className="tab">
+          <div className="containerw">
+            <Slider {...settings}>
+              <SliderCard day="Monday" />
+              <SliderCard day="Tuesday" />
+              <SliderCard day="Wednesday" />
+              <SliderCard day="Thursday" />
+              <SliderCard day="Friday" />
+              <SliderCard day="Saturday" />
+              <SliderCard day="Sunday" />
+              <SliderCard day="Monday" />
+              <SliderCard day="Tuesday" />
+              <SliderCard day="Wednesday" />
+              <SliderCard day="Thursday" />
+              <SliderCard day="Friday" />
+              <SliderCard day="Saturday" />
+              <SliderCard day="Sunday" />
+              <SliderCard day="Monday" />
+              <SliderCard day="Tuesday" />
+              <SliderCard day="Wednesday" />
+              <SliderCard day="Thursday" />
+              <SliderCard day="Friday" />
+              <SliderCard day="Saturday" />
+              <SliderCard day="Sunday" />
+            </Slider>
+          </div>
+        </Card>
       </div>
     );
   }
 }
-export default Home;
+export default Timing;

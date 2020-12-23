@@ -8,7 +8,6 @@ import { signOut, signIn } from "../../actions";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 
 import logo from "../../logo/logo4.png";
 
@@ -29,24 +28,21 @@ class NavBar extends React.Component {
     if (!this.props.isSignedIn) {
       return (
         <React.Fragment>
-          <NavItem name="Login" route="/login" />
-          <NavItem name="Register" route="/register" />
+          <NavItem name="Login" route="/login/patient" />
+          <NavItem name="Register" route="/register/patient" />
         </React.Fragment>
       );
     } else if (this.props.isSignedIn) {
       return (
         <React.Fragment>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Button className="white">Home</Button>
-          </Link>
-          <Link to="/doctor/list" style={{ textDecoration: "none" }}>
-            <Button className="white">Doctors</Button>
-          </Link>
+          <NavItem name="Home" route="/" />
+          <NavItem name="Doctors" route="/doctor/list" />
           <NavProfile logout={this.onClickLogout} />
         </React.Fragment>
       );
     } else {
-      return null;
+      // show loading here
+      return <div></div>; 
     }
   };
 

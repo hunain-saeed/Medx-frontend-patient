@@ -7,6 +7,14 @@
   border-color: #edf0f4;
   box-shadow: 0px 1px 5px #e8eaed;
 }
+.home-color {
+  color: #6E6FD9;
+  border-color: #6E6FD9;
+}
+.home-color:hover {
+  background-color: #6E6FD9;
+  border-color: #6E6FD9;
+}
 .container {
   width: 100%;
   margin-right: auto;

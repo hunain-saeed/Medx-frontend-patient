@@ -1,129 +1,74 @@
 
-.body {
-    overflow-x: hidden;
-    background-image: url(../../images/Home.png);
-    height: 900px;
-    background-repeat: no-repeat;
-    background-size: 1600px 900px;
-  }
-  .specname{
-    margin-top: 30px;
-    margin-left: 0%;
-  }
-  .butt {
-    height: 100px;
-    width: 100px;
-    background-color: white;
-    border-radius: 100%;
-    border: none;
-    padding: 30px;
-  }
-  .speccard {
-    margin-left: 600px;
-    width: 350px;
-    height: 105px;
-    border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    margin-bottom: 30px;
-    box-shadow: 10px 11px 15px black;
-  }
-  .imgden {
-    background-image: url(../../images/dent.png);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .img1 {
-    background-image: url(../../images/bone.png);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .img3 {
-    background-image: url(../../images/pae.png);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .img4 {
-    background-image: url(../../images/dermo.jpg);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .img5 {
-    background-image: url(../../images/ENT.jpg);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .img6 {
-    background-image: url(../../images/eye.jpg);
-    background-size: 110px 110px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .conbutt {
-    color: black;
-    position: absolute;
-    margin-top: 100px;
-    width: 1000px;
-    margin-left: 600px;
-    text-align: center;
-  }
-  .ss {
-    box-shadow: 10px 11px 15px black;
-    position: absolute;
-    margin-top: 40px;
-    --rad: 0.7rem;
-    --dur: 0.3s;
-    --color-dark: #1e2124;
-    --color-light: #fff;
-    --color-brand: #28a745;
-    --font-fam: "Lato", sans-serif;
-    --height: 5rem;
-    --btn-width: 6rem;
-    --bez: cubic-bezier(0, 0, 0.43, 1.49);
-    background: var(--color-brand);
-    border-radius: var(--rad);
-    width: 700px;
-    margin-left: 450px;
-  }
-  
-  .search {
-    height: 45px;
-    font-family: var(--font-fam);
-    color: white;
-    border: 0;
-    color: var(--color-dark);
-    font-size: 1.8rem;
-    outline: 0;
-    width: 100%;
-    background: var(--color-light);
-    padding: 0 1.6rem;
-    border-radius: var(--rad);
-    appearance: none;
-    transition: all var(--dur) var(--bez);
-    transition-property: width, border-radius;
-    z-index: 1;
-    position: relative;
-  }
-  .searchbutt {
-    height: 46px;
-    font-family: var(--font-fam);
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ffffff;
-    width: var(--btn-width);
-    font-weight: bold;
-    background: var(--color-brand);
-    border-radius: 0 var(--rad) var(--rad) 0;
-  }
-  /* input:not(:placeholder-shown) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-  } */
-  
+.image {
+  background-image: url(../../images/pic.jpg);
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 110px;
+  background-size: 110px 110px;
+  border-radius: 100%;
+  border-width: thin;
+  border-style: solid;
+  border-color: white;
+  margin-top: 4px;
+  margin-left: 30px;
+}
+.info {
+  margin-left: 10px;
+  margin-top: 25px;
+  color: black;
+}
+.specc {
+  align-self: left;
+}
+.tab {
+  margin-left: 450px;
+  background-color: #38393b;
+  width: 700px;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 100px;
+  border-color: #edf0f4;
+  box-shadow: c #e8eaed;
+}
+
+
+.containerw {
+  padding: 60px;
+  background:rgb(52,58,64);
+  color: black;
+  height: auto;
+  border-color: #edf0f4;
+  box-shadow: c #e8eaed;
+  border-radius: 16px;
+  width: 700px;
+
+}
+
+.day{
+  height: 320px;
+}
+.hed{
+  text-align: center;
+}
+
+.time{
+  background-color: #edf0f4;
+  height: auto;
+  width: 400px;
+  align-self: start;
+  border-color: #edf0f4;
+  box-shadow: c #e8eaed;
+  margin-bottom: 5px;
+}
+.dd{
+  width: 530px;
+  text-align: center;
+}
+.timing{
+  margin-top: 10px;
+}
+.buttons{
+  height: 50px;
+  margin-bottom: 5px;
+
+}

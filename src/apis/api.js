@@ -6,14 +6,12 @@ export const Login = `${baseURL}/login/`;
 
 export const DocList = `${baseURL}/doctor`;
 
-export const SpecList = `${baseURL}/specialization`;
-
 export const PatProfile = `${baseURL}/patient/profile`;
 
-export const DocProfile = `${baseURL}/doctor/profile`
+export const BookApi = `${baseURL}/appointment/`
 
-// export const RegisterPatient = `${baseURL}/register/patient`;
-// export const RegisterDoctor = `${baseURL}/register/doctor`;
+export const CurDoc = `${baseURL}/doctor/`;
 
-// export const LoginPatient = `${baseURL}/login/patient`;
-// export const LoginDoctor = `${baseURL}/login/doctor`;
+export const Shedule = `${baseURL}/schedule/`;
+
+export const AppointList = `${baseURL}/appointment/patient/view`
