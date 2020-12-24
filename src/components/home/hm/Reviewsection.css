@@ -1,0 +1,12 @@
+.texting {
+  text-align: center;
+}
+.line-heading {
+    margin: 0;
+  border-top: 1px solid #cccccc;
+  box-shadow: 0px 2px 3px #e0e0e0;
+  border-radius: 100%;
+}
+.wall{
+    background-color: #efefef;
+}

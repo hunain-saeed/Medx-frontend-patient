@@ -70,19 +70,3 @@ class Appointment extends Component {
 }
 
 export default Appointment;
-
-//             <div className="col-lg-6 col-12 footer px-3 align-self-center">
-//             <Card.Subtitle className="my-2">
-//                   Charges: Rs. 2000
-//                 </Card.Subtitle>
-//               <Card.Subtitle className="my-2">
-//                   Tuesday
-//                 </Card.Subtitle>
-//                 <Card.Subtitle className="my-2">
-//                   9:30 PM
-//                 </Card.Subtitle>
-//             </div>
-//           </div>
-//         </Card>
-//       </div>
-//     );

@@ -21,6 +21,12 @@
   box-shadow: 0px 2px 3px #e0e0e0;
   border-radius: 100%;
 }
+.line-heading-top {
+  margin-bottom: 10px;
+  border-top: 1px solid #cccccc;
+  box-shadow: 0px -2px 3px #e0e0e0;
+  border-radius: 100%;
+}
 /* purple: 6E6FD9/9D99E6/736BE5, blue: 0065A9/5b5db7, mehroon: AE376D*/
 
 @media only screen and (min-width: 100px) {

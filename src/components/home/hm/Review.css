@@ -1,0 +1,27 @@
+.header{
+    border: 1px solid #f4f7fc;
+    box-shadow: 2px 2px #000;
+    margin-left: 0px;
+    width: 100%;
+}
+.imgicon{
+    color: white;
+    background-color: #6E6FD9;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 2px solid white;
+    text-align: center;
+    margin: 5px;
+}
+.account{
+    line-height: 0%;
+}
+.clor{
+    background-color: #f4f7fc;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #e8eaed;
+    border-right: 1px solid #e8eaed;
+    border-radius: 10px;
+}  

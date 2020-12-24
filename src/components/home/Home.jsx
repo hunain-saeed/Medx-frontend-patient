@@ -1,7 +1,11 @@
 import "./Home.css";
 import React from "react";
+
+import ReviewSection from "./hm/Reviewsection"
+import Meettheteam from "./hm/Meettheteam";
+import Footer from "../footer/Footer";
+
 import homeImg from "../../images/homeimg1.jpg";
-import { Button } from "react-bootstrap";
 
 class Home extends React.Component {
   render() {
@@ -26,6 +30,11 @@ class Home extends React.Component {
             <img className="home-top-img" src={homeImg} alt="Background" />
           </div>
         </div>
+        <ReviewSection/>
+        <div className="line-heading-top mb-4"></div>
+        <Meettheteam/>
+        <div className="mt-5"></div>
+        <Footer />
       </div>
     );
   }

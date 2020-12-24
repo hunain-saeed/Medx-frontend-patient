@@ -1,0 +1,13 @@
+.meet {
+  text-align: center;
+}
+.card-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-size {
+  width: 300px;
+  box-shadow: 0px 4px 5px #ababab;
+}

@@ -60,13 +60,7 @@ class Profile extends React.Component {
               <h2>Appointment List</h2>
               <hr />
             </div>
-            {/* <div className="list"> */}
             {this.drawAppointment()}
-            {/* 
-              <Appointment name="Bilal Ahsan" img="https:t.ly/dzY1" />
-              <Appointment name="Kanwal Gul" img="https:t.ly/gbqr" />
-              <Appointment name="Smith Joe" img="https:t.ly/JqFx" /> */}
-            {/* </div> */}
           </div>
           <div className="col-lg-1 col-12 m-0 p-0"></div>
         </div>
@@ -81,7 +75,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.auth.user,
     isSignedIn: state.auth.isSignedIn,
-    appList: state.applist.applist,
+    applist: state.applist.appList,
     loading: state.applist.loading,
   };
 };

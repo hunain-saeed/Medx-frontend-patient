@@ -13,7 +13,7 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const PAT_PROFILE = "PAT_PROFILE";
 
 export const PAT_APPLIST = "PAT_APPLIST";
-export const  NULL_APP= "NULL_APP";
+export const BOOK_APP = "BOOK_APP";
 
 // export const AUTH_ERROR = "AUTH_ERROR";
 
