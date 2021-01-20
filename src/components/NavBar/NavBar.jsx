@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut, signIn } from "../../actions";
+import { logoutPat } from "../../actions/auth";
 
 // Material Ui
 import AppBar from "@material-ui/core/AppBar";
@@ -17,6 +18,7 @@ import NavProfile from "./NavProfile";
 
 class NavBar extends React.Component {
   onClickLogout = () => {
+    this.props.logoutPat();
     this.props.signOut();
   };
   renderAuthButton = () => {
@@ -42,7 +44,7 @@ class NavBar extends React.Component {
       );
     } else {
       // show loading here
-      return <div></div>; 
+      return <div></div>;
     }
   };
 
@@ -71,4 +73,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signOut, signIn })(NavBar);
+export default connect(mapStateToProps, { signOut, signIn, logoutPat })(NavBar);

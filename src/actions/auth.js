@@ -18,6 +18,13 @@ const config = {
     "Content-Type": "application/json",
   },
 };
+// logout User
+export const logoutPat = () => {
+  return async (dispatch) => {
+    dispatch(setAlert("You are logged out!", "warning"))
+  }
+}
+
 
 // Load User
 export const loadPat = () => {
