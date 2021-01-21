@@ -7,7 +7,6 @@ import { Form, Button } from "react-bootstrap";
 import { setAlert } from "../../actions/alert";
 import { login } from "../../actions/auth";
 
-// TODO when correct user login then navigate to correct router other then login
 class Login extends Component {
   state = { email: "", password: "" };
 

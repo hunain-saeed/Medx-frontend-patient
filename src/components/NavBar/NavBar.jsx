@@ -16,6 +16,7 @@ import logo from "../../logo/logo4.png";
 import NavItem from "./NavItem";
 import NavProfile from "./NavProfile";
 
+//TODO onclick logout empty nessesory details like user details. not doctors details
 class NavBar extends React.Component {
   onClickLogout = () => {
     this.props.logoutPat();
