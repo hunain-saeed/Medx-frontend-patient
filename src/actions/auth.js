@@ -7,6 +7,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   PAT_PROFILE,
+  SIGN_OUT,
 } from "./types";
 
 // All backend apis
@@ -21,10 +22,10 @@ const config = {
 // logout User
 export const logoutPat = () => {
   return async (dispatch) => {
-    dispatch(setAlert("You are logged out!", "warning"))
-  }
-}
-
+    dispatch({ type: SIGN_OUT });
+    dispatch(setAlert("You are logged out!", "warning"));
+  };
+};
 
 // Load User
 export const loadPat = () => {

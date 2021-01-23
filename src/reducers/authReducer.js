@@ -25,10 +25,19 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, isSignedIn: true, loading: false };
 
     case PAT_PROFILE:
-      return {...state, isSignedIn: true, loading: false, user: action.payload}
+      return {
+        ...state,
+        isSignedIn: true,
+        loading: false,
+        user: action.payload,
+      };
+    // TODO recently added this
+    case SIGN_OUT:
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
+      return { ...state, isSignedIn: false, loading: false, user: null };
 
     case REGISTER_FAIL:
-    case SIGN_OUT:
     case LOGIN_FAIL:
       localStorage.removeItem("token");
       localStorage.removeItem("role");

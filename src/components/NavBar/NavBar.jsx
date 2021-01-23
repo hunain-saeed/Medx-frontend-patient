@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut, signIn } from "../../actions";
 import { logoutPat } from "../../actions/auth";
@@ -9,6 +9,7 @@ import { logoutPat } from "../../actions/auth";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 import logo from "../../logo/logo4.png";
 
@@ -20,7 +21,7 @@ import NavProfile from "./NavProfile";
 class NavBar extends React.Component {
   onClickLogout = () => {
     this.props.logoutPat();
-    this.props.signOut();
+    <Redirect to="/" />;
   };
   renderAuthButton = () => {
     if (localStorage.getItem("token") !== null) {
@@ -33,6 +34,7 @@ class NavBar extends React.Component {
         <React.Fragment>
           <NavItem name="Login" route="/login/patient" />
           <NavItem name="Register" route="/register/patient" />
+          <Button><a className="white" style={{ textDecoration: "none" }} href="http://localhost:3001">For Doctors</a></Button>
         </React.Fragment>
       );
     } else if (this.props.isSignedIn) {

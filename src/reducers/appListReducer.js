@@ -1,4 +1,4 @@
-import { PAT_APPLIST, BOOK_APP } from "../actions/types";
+import { PAT_APPLIST, BOOK_APP, SIGN_OUT } from "../actions/types";
 
 const INITIAL_STATE = {
   appList: [],
@@ -14,6 +14,9 @@ export default (state = INITIAL_STATE, action) => {
         appList: action.payload,
         loading: false,
       };
+
+    case SIGN_OUT:
+      return { ...state, appList: [], loading: false };
 
     default:
       return state;
