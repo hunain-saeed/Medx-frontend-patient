@@ -11,8 +11,11 @@
   width: 110px;
   background-image: linear-gradient(to right, #be6ed8, #6e6fd9);
 }
+.text-gray {
+  color: #bfbfbf;
+}
 .contact {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 400;
 }

@@ -8,5 +8,11 @@
 .btnsize {
   padding-left: 30px !important;
   padding-right: 30px !important;
-  
+}
+
+.notavalable {
+  color: #5a5a5a;
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
 }

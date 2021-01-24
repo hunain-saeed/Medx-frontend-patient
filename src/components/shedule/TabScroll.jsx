@@ -69,7 +69,7 @@ class TabScroll extends Component {
       this.props.doc_id
     );
   };
-
+  // draws the bar of 21 days and time function draw the shedule of respective day
   drawTabs = () => {
     var k = 0;
     let weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -103,7 +103,7 @@ class TabScroll extends Component {
       return <h1>No free time slots available for selected date</h1>;
     }
   };
-
+  // Draw the shedule of respective day 
   drawTime = () => {
     var count = 0;
     var k = 0;
@@ -112,7 +112,7 @@ class TabScroll extends Component {
         return (
           <TabPanel key={count} value={this.state.value} index={count++}>
             <div className="row">
-              {datetime.time.map((t) => {
+              {datetime.time.length > 0 ? datetime.time.map((t) => {
                 if (t) {
                   k = k + 1;
                   return (
@@ -129,7 +129,7 @@ class TabScroll extends Component {
                     </div>
                   );
                 }
-              })}
+              }) : <h5 className="notavalable">No free time slots available for selected date</h5>}
             </div>
           </TabPanel>
         );

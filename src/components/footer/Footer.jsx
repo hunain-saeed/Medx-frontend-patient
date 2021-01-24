@@ -16,7 +16,7 @@ class Footer extends React.Component {
           <div className="col-md-6">
             <h1 className="font-weight-bold">Medx</h1>
             <div className="footerheadborder"></div>
-            <p>
+            <p className="text-gray">
               Book appointments with the best Doctors and Specialists such as
               Gynecologists, Skin Specialists, Child Specialists, Surgeons, etc.
               Avail test services such as MRI, CT scan, Ultrasound, X-Ray, etc.
@@ -31,12 +31,12 @@ class Footer extends React.Component {
               <LocationOnIcon style={{ fontSize: 20 }} className="mr-2 mb-1" />
               Address
             </p>
-            <div className="mt-0 mb-3">Bulding# 3 A Street Karachi</div>
+            <div className="mt-0 mb-3 text-gray">Bulding# 3 A Street Karachi</div>
             <p className="mb-1">
               <PhoneIcon style={{ fontSize: 20 }} className="mr-2 mb-1" />
               Phone
             </p>
-            <div className="mt-0 mb-3">+92 111 2233112</div>
+            <div className="mt-0 mb-3 text-gray">+92 111 2233112</div>
             <p className="mb-1">
               <EmailOutlinedIcon
                 style={{ fontSize: 20 }}
@@ -44,7 +44,7 @@ class Footer extends React.Component {
               />
               Email
             </p>
-            <div className="mt-0 mb-3">info@medx.com</div>
+            <div className="mt-0 mb-3 text-gray">info@medx.com</div>
           </div>
         </div>
       
