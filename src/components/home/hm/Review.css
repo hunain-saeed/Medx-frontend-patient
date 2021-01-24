@@ -1,27 +1,16 @@
-.header{
-    border: 1px solid #f4f7fc;
-    box-shadow: 2px 2px #000;
-    margin-left: 0px;
-    width: 100%;
+.review-img {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+  background-color: #dfdfdf;
+  height: 60px;
+  width: 60px;  
 }
-.imgicon{
-    color: white;
-    background-color: #6E6FD9;
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    border: 2px solid white;
-    text-align: center;
-    margin: 5px;
+
+.review-hover:hover {
+    border-radius: 3%;
+    box-shadow: 2px 2px 15px #d6d9dd;
 }
-.account{
-    line-height: 0%;
+.name {
+  font-weight: bold;
 }
-.clor{
-    background-color: #f4f7fc;
-    border-top: none;
-    border-bottom: none;
-    border-left: 1px solid #e8eaed;
-    border-right: 1px solid #e8eaed;
-    border-radius: 10px;
-}  

@@ -6,7 +6,8 @@ import Meettheteam from "./hm/Meettheteam";
 import Footer from "../footer/Footer";
 
 import homeImg from "../../images/homeimg1.jpg";
-
+// TODO FEATURE find doctor by health concern
+// TODO FEATURE look for more (healthy artical, medical tips etc)
 class Home extends React.Component {
   render() {
     return (
@@ -16,8 +17,8 @@ class Home extends React.Component {
             <h2>Find and book</h2>
             <h1 className="text-center top-heading">THE BEST</h1>
             <h2 className="text-right">doctors near you</h2>
-            <div className="line-heading"></div>
-            <p className="container-fluid">
+            <div className="line-heading" />
+            <p className="container-fluid mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br /> Morbi eget placerat elit. Vivamumkmmks quis dictum.
             </p>
@@ -31,7 +32,7 @@ class Home extends React.Component {
           </div>
         </div>
         <ReviewSection/>
-        <div className="line-heading-top mb-4"></div>
+        <div className="rew-section"></div>
         <Meettheteam/>
         <div className="mt-5"></div>
         <Footer />

@@ -1,20 +1,21 @@
 import "./Footer.css";
 import React from "react";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
-import MailIcon from "@material-ui/icons/Mail";
+import EmailOutlinedIcon from "@material-ui/icons/EmailOutlined";
 
 class Footer extends React.Component {
   render() {
     return (
-      <div className="about mt-4">
-        <h2 className="heading">About Us</h2>
+      <div className="about">
         <div className="row m-0">
           <div className="col-md-1" />
-          <div className="col-md-5">
-            <h3>Motivation</h3>
+          <div className="col-md-6">
+            <h1 className="font-weight-bold">Medx</h1>
+            <div className="footerheadborder"></div>
             <p>
               Book appointments with the best Doctors and Specialists such as
               Gynecologists, Skin Specialists, Child Specialists, Surgeons, etc.
@@ -24,39 +25,36 @@ class Footer extends React.Component {
             </p>
           </div>
           <div className="col-md-1" />
-          <div className="col-md-5">
-            <div className="mb-3">
-              <FacebookIcon style={{ fontSize: 50 }} className="mr-3" />
-              www.Facebook.com/MedX Healthcare
-            </div>
-            <div className="mb-3">
-              <InstagramIcon style={{ fontSize: 50 }} className="mr-3" />
-              www.Instagram.com/MedX_Healthcare
-            </div>
-            <div className="mb-3">
-              <TwitterIcon style={{ fontSize: 50 }} className="mr-3" />
-              www.Twitter.com/Medx_Healthcare
-            </div>
+          <div className="col-md-4">
+            <h4 className="contact">Contact Info</h4>
+            <p className="mb-1">
+              <LocationOnIcon style={{ fontSize: 20 }} className="mr-2 mb-1" />
+              Address
+            </p>
+            <div className="mt-0 mb-3">Bulding# 3 A Street Karachi</div>
+            <p className="mb-1">
+              <PhoneIcon style={{ fontSize: 20 }} className="mr-2 mb-1" />
+              Phone
+            </p>
+            <div className="mt-0 mb-3">+92 111 2233112</div>
+            <p className="mb-1">
+              <EmailOutlinedIcon
+                style={{ fontSize: 20 }}
+                className="mr-2 mb-1"
+              />
+              Email
+            </p>
+            <div className="mt-0 mb-3">info@medx.com</div>
           </div>
         </div>
-        <div className="divider">
-          <h2>Contact Us @</h2>
-          <div className="row m-0">
-            <div className="col-md-6">
-              <div>
-                <PhoneIcon style={{ fontSize: 50 }} className="mr-3" />
-                0092-335-314-9032
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div>
-                <MailIcon style={{ fontSize: 50 }} className="mr-3" />
-                MedXOfficial@gmail.com
-              </div>
-            </div>
-          </div>
+      
+        <div className="socialmedia">
+          <FacebookIcon className="mx-4 facebook" style={{ fontSize: 50 }} />
+          <InstagramIcon className="mx-4 instagram" style={{ fontSize: 50 }} />
+          <TwitterIcon className="mx-4 twitter" style={{ fontSize: 50 }} />
         </div>
 
+        <div className="copywrite">© Copy write 2021 Medx</div>
       </div>
     );
   }

@@ -1,26 +1,44 @@
 .about {
   height: auto;
   width: auto;
-  background-color: #2e3338;
+  background-color: #212121;
   color: white;
+  padding-top: 90px;
 }
-.heading {
+.footerheadborder {
+  margin-bottom: 20px;
+  height: 3px;
+  width: 110px;
+  background-image: linear-gradient(to right, #be6ed8, #6e6fd9);
+}
+.contact {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.socialmedia {
+  border-top: 2px solid #191919;
+  margin-top: 50px;
+  padding: 45px 0;
+  width: 100%;
   text-align: center;
-  margin-bottom: 30px;
 }
-.para {
-  width: 600px;
-  margin-left: 20px;
+.facebook:hover {
+  color: #3b5998;
 }
-.linespacing {
-  line-height: 160%;
+.twitter:hover {
+  color: #00acee;
 }
-.icons {
-  margin-left: 500px;
-}
-.divider {
-  border-top: 1px solid #e8eaed;
-  height: 100px;
-  text-align: center;
+.instagram:hover {
+  color: #B82F9F;
 }
 
+.copywrite {
+  border-top: 2px solid #171717;
+  width: 100%;
+  background-color: #191919;
+  margin-bottom: 0;
+  padding: 40px 0;
+  text-align: center;
+  color: #be6ed8;
+}

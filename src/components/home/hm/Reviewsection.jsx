@@ -5,55 +5,44 @@ import "./Reviewsection.css";
 class Reviewsection extends Component {
   render() {
     return (
-      <div className="mt-5">
-        <h1 className="texting">Experts Review</h1>
-        <div className="line-heading"></div>
-        <div className="row pt-3 m-0 wall">
-          <div className="d-flex col-lg-4 justify-content-center">
+      <div className="pt-4 pb-5 wall">
+      {/* <div className="line-heading"></div> */}
+        <h3 className="texting">EXPERTS REVIEW</h3>
+        <div className="revheadborder"></div>
+        <div className="row py-1 m-0 px-5">
+          <div className="col-lg-6 col-xl-4 px-1 py-2">
             <Review
-              icon="R"
-              name="Rabia_Gulzar"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Rabia Gulzar"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>
-          <div className="d-flex col-lg-4 justify-content-center">
+          <div className="col-lg-6 col-xl-4 px-1 py-2">
             <Review
-              icon="A"
-              name="Arham_Javaid"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Arham Javaid"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>
-          <div className="d-flex col-lg-4 justify-content-center">
+          <div className="col-xl-4 col-lg-6 px-1 py-2">
             <Review
-              icon="R"
-              name="Rabia_Gulzar"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Rabia Gulzar"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>
-          <div className="d-flex col-lg-4 justify-content-center">
+          <div className="col-xl-4 col-lg-6 px-1 py-2">
             <Review
-              icon="R"
-              name="Rabia_Gulzar"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Rabia Gulzar"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>
-          <div className="d-flex col-lg-4 justify-content-center">
+          <div className="col-xl-4 col-lg-6 px-1 py-2">
             <Review
-              icon="R"
-              name="Rabia_Gulzar"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Rabia Gulzar"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>
-          <div className="d-flex col-lg-4 justify-content-center">
+          <div className="col-xl-4 col-lg-6 px-1 py-2">
             <Review
-              icon="R"
-              name="Rabia_Gulzar"
-              sub="Assistant Prof. FAST-NUCES "
+              name="Rabia Gulzar"
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
             />
           </div>

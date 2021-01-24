@@ -1,12 +1,21 @@
 .texting {
   text-align: center;
+  margin-top: 50px;
+}
+.revheadborder {
+  margin: 0 auto;
+  height: 3px;
+  /* border: 2px solid; */
+  width: 213px;
+  background-image: linear-gradient(to right, #be6ed8, #6e6fd9);
 }
 .line-heading {
-    margin: 0;
+  margin: 0;
   border-top: 1px solid #cccccc;
   box-shadow: 0px 2px 3px #e0e0e0;
   border-radius: 100%;
 }
-.wall{
-    background-color: #efefef;
+.wall {
+  background-color: #f4f7fc;
+  /* background-color:  #efefef;be6ed8 ca99e6 */
 }
