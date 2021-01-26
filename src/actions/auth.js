@@ -7,56 +7,18 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   PAT_PROFILE,
+  UPDATE_PROFILE,
   SIGN_OUT,
 } from "./types";
 
 // All backend apis
-import { Register, Login, PatProfile } from "../apis/api";
+import { Register, Login, PatProfile, UpdateProfileApi } from "../apis/api";
 
 // Global variable
 const config = {
   headers: {
     "Content-Type": "application/json",
   },
-};
-// logout User
-export const logoutPat = () => {
-  return async (dispatch) => {
-    dispatch({ type: SIGN_OUT });
-    dispatch(setAlert("You are logged out!", "warning"));
-  };
-};
-
-// Load User
-export const loadPat = () => {
-  return async (dispatch) => {
-    if (localStorage.getItem("token") !== null) {
-      const token = await localStorage.getItem("token");
-      const config2 = {
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": token,
-        },
-      };
-      try {
-        const role = await localStorage.getItem("role");
-        if (role === "patient") {
-          const res = await axios.get(PatProfile, config2);
-
-          dispatch({ type: PAT_PROFILE, payload: res.data });
-        }
-      } catch (err) {
-        console.error(err);
-
-        if (err.response) {
-          const errors = err.response.data ? err.response.data.errors : null;
-          if (errors) {
-            errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
-          }
-        }
-      }
-    }
-  };
 };
 
 // Register for Doctor and Patient both
@@ -113,6 +75,75 @@ export const login = ({ email, password }, name) => {
       }
 
       dispatch({ type: LOGIN_FAIL });
+    }
+  };
+};
+
+// Load User
+export const loadPat = () => {
+  return async (dispatch) => {
+    if (localStorage.getItem("token") !== null) {
+      const token = await localStorage.getItem("token");
+      const config2 = {
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": token,
+        },
+      };
+      try {
+        const role = await localStorage.getItem("role");
+        if (role === "patient") {
+          const res = await axios.get(PatProfile, config2);
+
+          dispatch({ type: PAT_PROFILE, payload: res.data });
+        }
+      } catch (err) {
+        console.error(err);
+
+        if (err.response) {
+          const errors = err.response.data ? err.response.data.errors : null;
+          if (errors) {
+            errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+          }
+        }
+      }
+    }
+  };
+};
+
+// logout User
+export const logoutPat = () => {
+  return async (dispatch) => {
+    dispatch({ type: SIGN_OUT });
+    dispatch(setAlert("You are logged out!", "warning"));
+  };
+};
+
+// Update profile
+export const updatePat = (user) => {
+  return async (dispatch) => {
+    if (localStorage.getItem("token") !== null) {
+      const token = await localStorage.getItem("token");
+      const config2 = {
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": token,
+        },
+      };
+      const body = JSON.stringify(user);
+      try {
+        const res = await axios.post(UpdateProfileApi, body, config2);
+        loadPat();
+      } catch (err) {
+        console.error(err);
+
+        if (err.response) {
+          const errors = err.response.data ? err.response.data.errors : null;
+          if (errors) {
+            errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+          }
+        }
+      }
     }
   };
 };

@@ -10,6 +10,8 @@ export const DocList = `${baseURL}/doctor`;
 
 export const PatProfile = `${baseURL}/patient/profile`;
 
+export const UpdateProfileApi = `${baseURL}/patient/update`;
+
 export const BookApi = `${baseURL}/appointment/`;
 
 export const CurDoc = `${baseURL}/doctor/`;
@@ -17,3 +19,4 @@ export const CurDoc = `${baseURL}/doctor/`;
 export const Shedule = `${baseURL}/schedule/`;
 
 export const AppointList = `${baseURL}/appointment/patient/view`;
+

@@ -1,13 +1,47 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { Form } from "react-bootstrap";
+
+import { loadPat, updatePat } from "../../../actions/auth";
 
 // import UI
 import Button from "react-bootstrap/Button";
+import { Form } from "react-bootstrap";
 
 class EditProfile extends Component {
-  onRegister = (event) => {};
+  state = {
+    name: "",
+    email: "",
+    address: "",
+    dob: "",
+    gender: "",
+  };
+  async componentDidMount() {
+    if (this.props.isSignedIn) {
+      if (localStorage.getItem("role") === "patient") {
+        await this.props.loadPat();
+      }
+      if (this.props.user) {
+        this.setState({
+          name: this.props.user.name,
+          email: this.props.user.email,
+          address: this.props.user.address,
+          dob: this.props.user.dob.split("T")[0],
+          gender: this.props.user.gender,
+        });
+      }
+    }
+  }
+
+  onChange = (e) => {
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
+  };
+
+  onSubmit = () => {
+    const { name, address, dob, gender } = this.state;
+
+    this.props.updatePat({ name, address, dob, gender });
+  };
   render() {
     if (!this.props.isSignedIn) {
       return <Redirect to="/" />;
@@ -18,7 +52,7 @@ class EditProfile extends Component {
             <div className="d-flex flex-column align-items-center">
               <h2>EDIT PROFILE</h2>
             </div>
-            <Form onSubmit={this.onRegister}>
+            <Form>
               {/* Name and email */}
               <Form.Group className="mbottom row">
                 <div className="col-md-6">
@@ -28,10 +62,9 @@ class EditProfile extends Component {
                     type="text"
                     name="name"
                     autoComplete="off"
-                    value="Change it"
-                    //   value={this.state.name}
+                    value={this.state.name}
                     required
-                    //   onChange={(e) => this.onChange(e)}
+                    onChange={(e) => this.onChange(e)}
                   />
                 </div>
                 <div className="col-md-6">
@@ -42,10 +75,9 @@ class EditProfile extends Component {
                     name="email"
                     autoComplete="off"
                     disabled
-                    value="hello"
-                    //   value={this.state.email}
+                    value={this.state.email}
                     required
-                    //   onChange={(e) => this.onChange(e)}
+                    onChange={(e) => this.onChange(e)}
                   />
                 </div>
               </Form.Group>
@@ -57,8 +89,8 @@ class EditProfile extends Component {
                   placeholder="Address"
                   type="text"
                   name="address"
-                  // value={this.state.address}
-                  // onChange={(e) => this.onChange(e)}
+                  value={this.state.address}
+                  onChange={(e) => this.onChange(e)}
                 />
               </Form.Group>
 
@@ -71,9 +103,10 @@ class EditProfile extends Component {
                     type="date"
                     name="dob"
                     max="2013-01-01"
-                    // value={this.state.dob}
+                    value={this.state.dob}
+                    // value = "2000-12-31"
                     placeholder="Date of Birth"
-                    // onChange={(e) => this.onChange(e)}
+                    onChange={(e) => this.onChange(e)}
                   />
                 </div>
                 <div className="col-md-6">
@@ -82,37 +115,43 @@ class EditProfile extends Component {
                     as="select"
                     name="gender"
                     custom
-                    // value={this.state.gender}
-                    // onChange={(e) => this.onChange(e)}
+                    value={this.state.gender}
+                    onChange={(e) => this.onChange(e)}
                   >
-                    <option></option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Others</option>
+                    <option>Choose...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Others</option>
                   </Form.Control>
                 </div>
               </Form.Group>
 
               <div className="row">
                 <div className="col-md-6">
-                  <Button
-                    className="mt-2"
-                    variant="success"
-                    block
-                    type="submit"
+                  <Link
+                    to={"/profile"}
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    Update
-                  </Button>
+                    <Button
+                      className="mt-2"
+                      variant="success"
+                      block
+                      type="submit"
+                      onClick={this.onSubmit}
+                    >
+                      Update
+                    </Button>
+                  </Link>
                 </div>
                 <div className="col-md-6">
-                  <Button
-                    className="mt-2"
-                    variant="danger"
-                    block
-                    type="submit"
+                  <Link
+                    to={"/profile"}
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    Cancle
-                  </Button>
+                    <Button className="mt-2" variant="danger" block>
+                      Cancle
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </Form>
@@ -124,7 +163,7 @@ class EditProfile extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.auth.isSignedIn };
+  return { user: state.auth.user, isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps)(EditProfile);
+export default connect(mapStateToProps, { loadPat, updatePat })(EditProfile);

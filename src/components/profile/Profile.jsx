@@ -12,8 +12,6 @@ import ProfilePanel from "./ProfilePanel";
 import Appointment from "./Appointment";
 
 class Profile extends React.Component {
-  
-
   componentDidMount() {
     if (this.props.isSignedIn) {
       if (localStorage.getItem("role") === "patient") {

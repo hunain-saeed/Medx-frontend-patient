@@ -4,7 +4,6 @@ import axios from "axios";
 import { setAlert } from "./alert";
 import {
   PAT_APPLIST,
-  NULL_APP,
   GET_DOCTORS,
   DOC_SHEDULE,
   GET_CUR_DOC,
@@ -26,7 +25,6 @@ export const appList = () => {
       };
       try {
         const res = await axios.get(AppointList, config2);
-        console.log(res);
         dispatch({ type: PAT_APPLIST, payload: res.data });
       } catch (err) {
         console.error(err);
