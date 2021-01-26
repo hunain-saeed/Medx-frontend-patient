@@ -1,9 +1,12 @@
 import "./Profile.css";
 import React from "react";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadPat } from "../../actions/auth";
 import { appList } from "../../actions/profile";
 
+// import UI
+import Button from "react-bootstrap/Button";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -51,7 +54,24 @@ class Profile extends React.Component {
               />
               <h2 className="mb-1">{this.props.user.name}</h2>
               <h4>{this.props.user.email}</h4>
-              <button className="btn edit-btn home-color">Edit Profile</button>
+              <Link
+                to={`/`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <Button className="edit-btn" variant="dark">View Profile</Button>
+              </Link>
+              <Link
+                to={`/profile/edit`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <Button className="edit-btn" variant="dark">Edit Profile</Button>
+              </Link>
+              <Link
+                to={`/profile/edit`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <Button className="edit-btn" variant="dark">Change Password</Button>
+              </Link>
             </div>
           </div>
           <div className="col-lg-1 col-12 m-0 p-0"></div>

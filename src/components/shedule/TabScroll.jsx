@@ -103,7 +103,7 @@ class TabScroll extends Component {
       return <h1>No free time slots available for selected date</h1>;
     }
   };
-  // Draw the shedule of respective day 
+  // Draw the shedule of respective day
   drawTime = () => {
     var count = 0;
     var k = 0;
@@ -112,24 +112,30 @@ class TabScroll extends Component {
         return (
           <TabPanel key={count} value={this.state.value} index={count++}>
             <div className="row">
-              {datetime.time.length > 0 ? datetime.time.map((t) => {
-                if (t) {
-                  k = k + 1;
-                  return (
-                    <div key={k} className="col-lg-2 col-sm-4 col-6 mb-4">
-                      <Button
-                        variant="contained"
-                        onClick={() => {
-                          this.takeDate(datetime.date, t);
-                        }}
-                        className="btnsize"
-                      >
-                        {t}
-                      </Button>
-                    </div>
-                  );
-                }
-              }) : <h5 className="notavalable">No free time slots available for selected date</h5>}
+              {datetime.time.length > 0 ? (
+                datetime.time.map((t) => {
+                  if (t) {
+                    k = k + 1;
+                    return (
+                      <div key={k} className="col-lg-2 col-sm-4 col-6 mb-4">
+                        <Button
+                          variant="contained"
+                          onClick={() => {
+                            this.takeDate(datetime.date, t);
+                          }}
+                          className="btnsize"
+                        >
+                          {t}
+                        </Button>
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <h5 className="notavalable">
+                  No free time slots available for selected date
+                </h5>
+              )}
             </div>
           </TabPanel>
         );

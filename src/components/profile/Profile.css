@@ -12,9 +12,15 @@
 .edit-btn{
   color: white !important;
   margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   width: 250px;
-  background-color: #6E6FD9;
+  background-color: #3E444A;
   border-color: #6E6FD9;
+}
+.edit-btn:hover{
+  background-image: linear-gradient(to right, #be6ed8, #6e6fd9);
+  border-color: #6E6FD9; 
 }
 
 .fullhight{
