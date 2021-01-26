@@ -1,18 +1,19 @@
 import "./Profile.css";
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadPat } from "../../actions/auth";
 import { appList } from "../../actions/profile";
 
 // import UI
-import Button from "react-bootstrap/Button";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+import ProfilePanel from "./ProfilePanel";
 import Appointment from "./Appointment";
 
 class Profile extends React.Component {
+  
+
   componentDidMount() {
     if (this.props.isSignedIn) {
       if (localStorage.getItem("role") === "patient") {
@@ -45,35 +46,7 @@ class Profile extends React.Component {
         </Backdrop>
       ) : (
         <div className="row m-0 p-0 fullhight">
-          <div className="col-lg-3 col-12 m-0 p-0 leftPro">
-            <div className="con">
-              <img
-                className="propic"
-                src={this.props.user.avatar}
-                alt="Profile"
-              />
-              <h2 className="mb-1">{this.props.user.name}</h2>
-              <h4>{this.props.user.email}</h4>
-              <Link
-                to={`/`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                <Button className="edit-btn" variant="dark">View Profile</Button>
-              </Link>
-              <Link
-                to={`/profile/edit`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                <Button className="edit-btn" variant="dark">Edit Profile</Button>
-              </Link>
-              <Link
-                to={`/profile/edit`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                <Button className="edit-btn" variant="dark">Change Password</Button>
-              </Link>
-            </div>
-          </div>
+          <ProfilePanel user={this.props.user} />
           <div className="col-lg-1 col-12 m-0 p-0"></div>
           <div className="col-lg-7 col-12">
             <div className="list">
