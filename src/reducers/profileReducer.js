@@ -1,4 +1,4 @@
-import { GET_DOCTORS, GET_CUR_DOC } from "../actions/types";
+import { GET_DOCTORS } from "../actions/types";
 
 const INITIAL_STATE = {
   docList: [],

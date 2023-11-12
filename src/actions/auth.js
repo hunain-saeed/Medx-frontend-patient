@@ -7,7 +7,6 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   PAT_PROFILE,
-  UPDATE_PROFILE,
   SIGN_OUT,
 } from "./types";
 
@@ -132,7 +131,7 @@ export const updatePat = (user) => {
       };
       const body = JSON.stringify(user);
       try {
-        const res = await axios.post(UpdateProfileApi, body, config2);
+        await axios.post(UpdateProfileApi, body, config2);
         loadPat();
       } catch (err) {
         console.error(err);
